@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Edit Profile</title>
+    </h:head>
+    <h:body>
+        <div class="card">
+            <h:form>
+                <p:breadCrumb>
+                    <p:menuitem value="EPlay" url="#"/>
+                    <p:menuitem value="Main Menu" url="/ED-Secure-war/faces/user/userPrimeFaces/primemenu.xhtml" icon="pi pi-fw pi-shopping-bag">
+                    </p:menuitem>
+                    <p:menuitem value=" Profile" url="#" icon="pi pi-fw pi-users"/>
+                    <p:menuitem value=" Your Cart" url="#" icon="pi pi-pw pi-shopping-cart"/>
+                </p:breadCrumb>
+            </h:form>
+        </div>
+        <br/>
+        <p:button value="Change Password" style="margin-bottom: 20px"><h:outputLink value="changePassword.xhtml"></h:outputLink></p:button>
+        <br/>
+        <h:form>
+            <p:panelGrid>
+                <p:row>
+                    <p:column style="width: 400px">
+                        <h5>Name:</h5>
+                        <p:inputText id="cusname" value="#{ePlayCustomerManagedBean.cusname}" />
+
+                        <h5>Phone:</h5>
+                        <p:inputText id="phone" value="#{ePlayCustomerManagedBean.phone}" /> 
+                    </p:column>
+                    <p:column style="width: 400px">
+                        <h5>Address:</h5>
+                        <p:inputText id="address" value="#{ePlayCustomerManagedBean.address}" />
+
+                        <h5>Email:</h5>
+                        <p:inputText id="email" value="#{ePlayCustomerManagedBean.email}" />
+                    </p:column>
+                </p:row>
+            </p:panelGrid>
+            <h:inputHidden id="username" value="#{ePlayCustomerManagedBean.username}" />
+            <h:inputHidden id="password" value="#{ePlayCustomerManagedBean.password}"/>
+            <h:inputHidden id="userGroup" value="#{ePlayCustomerManagedBean.userGroup}"/>
+            <h:inputHidden id="active" value="#{ePlayCustomerManagedBean.active}"/>
+            <h:inputHidden id="rank" value="#{ePlayCustomerManagedBean.rank}"/>
+            <h:inputHidden id="pbrought" value="#{ePlayCustomerManagedBean.pbrought}"/>
+            <p:commandButton id="submit" value="Submit" style="margin-top: 20px"
+                             action="#{ePlayCustomerManagedBean.changeCustomer}"/>
+        </h:form>
+
+    </h:body>
+</html>
+

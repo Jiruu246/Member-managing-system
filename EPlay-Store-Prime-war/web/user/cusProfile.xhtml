@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Main Menu</title>
+    </h:head>
+    <h:body>
+
+        <div class="card">
+            <h:form>
+                <p:breadCrumb>
+                    <p:menuitem value="EPlay" url="#"/>
+                    <p:menuitem value=" Main menu" url="#" icon="pi pi-fw pi-shopping-bag"/>
+                    <p:menuitem value=" Profile" url="#" icon="pi pi-fw pi-users"/>
+                    <p:menuitem value=" Your Cart" url="#" icon="pi pi-pw pi-shopping-cart"/>
+                </p:breadCrumb>
+            </h:form>
+        </div>
+
+        <div class="card">
+            <p:panelGrid >
+                <p:row>
+                    <p:column>
+                        <p:card style="width: 16em">
+                            <f:facet name="header">
+                                <img alt="user header" src="../resources/images/user.jpg"/>
+                            </f:facet>
+                            <f:facet name="title">
+                                Billy Eyelash
+                            </f:facet>
+                            <f:facet name="subtitle">
+                                Rank: Gold
+                            </f:facet>
+
+                            <f:facet name="footer">
+                                <p:commandButton icon="pi pi-image" value="Change Image"/>
+                            </f:facet>
+                        </p:card>
+                    </p:column>
+
+                    <p:column>
+                        <p:panelGrid>
+                            <p:row>
+                                <p:column style="width: 400px">
+                                    <h5>Name:</h5>
+                                    <p:inputText value="Billy Eyelash" readonly="true"/>
+
+                                    <h5>Phone:</h5>
+                                    <p:inputText value="Billy Eyelash" readonly="true"/> 
+
+                                    <h5>Number of Product Brought:</h5>
+                                    <p:inputText value="20" readonly="true"/> 
+                                </p:column>
+                                <p:column style="width: 400px">
+                                    <h5>Address:</h5>
+                                    <p:inputText value="Billy Eyelash" readonly="true"/>
+
+                                    <h5>Email:</h5>
+                                    <p:inputText value="Billy Eyelash" readonly="true"/>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+                        <p:button value="Change Details" styleClass="ui-button-raised" style="margin-top: 40px" />
+
+                    </p:column>
+
+                </p:row>
+
+            </p:panelGrid>
+        </div>
+
+    </h:body>
+</html>
+

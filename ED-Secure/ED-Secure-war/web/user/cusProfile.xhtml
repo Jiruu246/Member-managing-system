@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>My Profile</title>
+        <link rel="stylesheet" href="../resources/css/index.css"/>
+
+    </h:head>
+    <h:body>
+        <div class="topnav">
+            <h:outputLink value="mainmenu.xhtml">Main Menu</h:outputLink>
+            <a class="active" href="#">Profile</a>
+            <a href="#">Your Cart</a>
+        </div>
+        <br/>
+        <div class="container">
+            <div class="image">
+                <img src="../resources/images/user.jpg"/>
+                <br/>
+                <h:button value="Change Image"/>
+            </div>
+            <div class="infor">
+                <h:form>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <h:outputLabel value="Name:"/>
+                                </td>
+                                <td>
+                                    <h:outputText value="#{ePlayCustomerManagedBean.cusname}"/>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:outputLabel value="Phone:"/>
+                                </td>
+                                <td>
+                                    <h:outputText value="#{ePlayCustomerManagedBean.phone}"/>     
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:outputLabel value="Address:"/>
+                                </td>
+                                <td>
+                                    <h:outputText value="#{ePlayCustomerManagedBean.address}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:outputLabel value="Email:"/>
+                                </td>
+                                <td>
+                                    <h:outputText value="#{ePlayCustomerManagedBean.email}"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h:outputLabel value="Rank:"/>
+                                </td>
+                                <td>
+                                    <h:outputText value="#{ePlayCustomerManagedBean.rank}"/>
+                                </td>
+                            </tr>    
+                            <tr>
+                                <td>
+                                    <h:outputLabel value="Number of Brought Product: "/>
+                                </td>
+                                <td>
+                                    <h:outputText value="#{ePlayCustomerManagedBean.pbrought}"/>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <br/>
+
+                    <h:commandButton id="submit" value="Edit Profile" 
+                                     action="#{ePlayCustomerManagedBean.setCustomerDetailsForChange}"/>
+                </h:form>
+            </div>
+        </div>
+        <br/>
+
+        <p>Click <h:outputLink value="mainmenu.xhtml">here</h:outputLink>
+            to return to the Main Menu
+        </p>
+    </h:body>
+</html>
+

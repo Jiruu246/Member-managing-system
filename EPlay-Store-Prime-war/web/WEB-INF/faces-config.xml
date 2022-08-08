@@ -1,0 +1,182 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!-- =========== FULL CONFIGURATION FILE ================================== -->
+
+<faces-config version="2.1"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
+    <navigation-rule>
+        <description>Admin's Main Menu</description>
+        <from-view-id>admin/mainmenu.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>logout.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Add Employee</description>
+        <from-view-id>/admin/addEmployee.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/addEmployeeSuccessful.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/addEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/debugEmpId.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Display Employee</description>
+        <from-view-id>/admin/displayEmployee.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/displayEmployeeDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/displayEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/admin/debugEmpId.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Change employee</description>
+        <from-view-id>/admin/changeEmployee.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/changeEmployeeDetails.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/changeEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/admin/debugEmpId.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Change details</description>
+        <from-view-id>/admin/changeEmployeeDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/changeEmployeeSuccessful.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/changeEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>debug</from-outcome>
+            <to-view-id>/admin/debugEmpId.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Change Password</description>
+        <from-view-id>/admin/changeEmployeePassword.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/changePasswordSuccessful.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/changePasswordFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Delete Employee</description>
+        <from-view-id>/admin/deleteEmployee.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/admin/deleteEmployeeSuccessful.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/admin/deleteEmployeeFailure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    
+    <!-- ========== for Customer ================-->
+    <navigation-rule>
+        <description>Main menu</description>
+        <from-view-id>/user/mainmenu.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{ePlayCustomerManagedBean.displayCustomer}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/user/cusProfile.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{ePlayShopCartManagedBean.addCart('00001')}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/user/mainmenu.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{ePlayShopCartManagedBean.addCart('00002')}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/user/mainmenu.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{ePlayShopCartManagedBean.addCart('00003')}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/user/mainmenu.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Customer Profile</description>
+        <from-view-id>/user/cusProfile.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{ePlayCustomerManagedBean.setCustomerDetailsForChange}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/user/editProfile.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{ePlayCustomerManagedBean.setCustomerDetailsForChange}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/user/Failure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>edit profile</description>
+        <from-view-id>/user/editProfile.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{ePlayCustomerManagedBean.changeCustomer}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/user/cusProfile.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{ePlayCustomerManagedBean.changeCustomer}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/user/Failure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>Change password</description>
+        <from-view-id>/user/changePassword.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{ePlayCustomerManagedBean.changeCustomerPassword}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/user/cusProfile.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-action>#{ePlayCustomerManagedBean.changeCustomerPassword}</from-action>
+            <from-outcome>failure</from-outcome>
+            <to-view-id>/user/Failure.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <description>my shopping cart</description>
+        <from-view-id>/user/myCart.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{ePlayShopCartManagedBean.checkOut}</from-action>
+            <from-outcome>success</from-outcome>
+            <to-view-id>/user/mainmenu.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

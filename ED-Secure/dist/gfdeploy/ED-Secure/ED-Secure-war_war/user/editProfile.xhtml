@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Edit Profile</title>
+    </h:head>
+    <h:body>
+        <h2>Edit Customer Profile Page</h2>
+
+        <h3>Please update the details of Customer
+            <h:outputText value="#{ePlayCustomerManagedBean.userId}"/>
+        </h3>
+        <br/>
+        <p> <h:outputLink value="changePassword.xhtml">Change Password</h:outputLink></p>
+        <br/>
+        <h:form>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Name:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Name" id="cusname"
+                                         maxlength="25"
+                                         required="true" 
+                                         requiredMessage="Name must not be blank"
+                                         value="#{ePlayCustomerManagedBean.cusname}"/>
+                        </td>
+                        <td>
+                            <h:message for="name" style="color:red"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Phone:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Phone" id="phone"
+                                         maxlength="10"
+                                         required="false"
+                                         value="#{ePlayCustomerManagedBean.phone}"/>     
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Address:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Address" id="address"
+                                         maxlength="30" 
+                                         required="false"
+                                         value="#{ePlayCustomerManagedBean.address}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h:outputLabel value="Email:"/>
+                        </td>
+                        <td>
+                            <h:inputText title="Email" id="email"
+                                         maxlength="30" 
+                                         required="false"
+                                         value="#{ePlayCustomerManagedBean.email}"/>
+                        </td>
+                    </tr>      
+
+                </tbody>
+            </table>
+            <h:inputHidden id="username" value="#{ePlayCustomerManagedBean.username}" />
+            <h:inputHidden id="password" value="#{ePlayCustomerManagedBean.password}"/>
+            <h:inputHidden id="userGroup" value="#{ePlayCustomerManagedBean.userGroup}"/>
+            <h:inputHidden id="active" value="#{ePlayCustomerManagedBean.active}"/>
+            <h:inputHidden id="rank" value="#{ePlayCustomerManagedBean.rank}"/>
+            <h:inputHidden id="pbrought" value="#{ePlayCustomerManagedBean.pbrought}"/>
+            <br/>
+
+            <h:commandButton id="submit" value="Submit" 
+                             action="#{ePlayCustomerManagedBean.changeCustomer}"/>
+
+        </h:form>
+    </h:body>
+</html>
+
